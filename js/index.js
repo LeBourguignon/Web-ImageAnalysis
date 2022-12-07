@@ -1,5 +1,5 @@
 import { grayscale } from "./grayscale.js";
-import { handleFiles } from "./handleFiles.js";
+import { handleFiles, reset } from "./handleFiles.js";
 import { thresholding } from "./thresholding.js";
 
 const input = document.getElementById('input');
@@ -14,4 +14,4 @@ sliderThresholding.addEventListener('input', function() {
 });
 
 const buttonThresholding = document.getElementById('thresholding');
-buttonThresholding.addEventListener('click', thresholding);
+buttonThresholding.addEventListener('click', thresholding);buttonReset.addEventListener('click', reset);
