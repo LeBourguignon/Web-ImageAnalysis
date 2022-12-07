@@ -13,10 +13,10 @@ function handleFiles(e) {
     }
 }
 
-const buttonBlackAndWhite = document.getElementById('blackAndWhite');
-buttonBlackAndWhite.addEventListener('click', blackAndWhite);
+const buttonGrayscale = document.getElementById('grayscale');
+buttonGrayscale.addEventListener('click', grayscale);
 
-function blackAndWhite() {
+function grayscale() {
     const ctx = document.getElementById('canvas').getContext('2d');
     const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < imgData.data.length; i += 4) {
