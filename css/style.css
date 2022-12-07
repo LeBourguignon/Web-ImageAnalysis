@@ -1,9 +1,22 @@
 body {
 	display: flex;
 	flex-direction: row;
+	justify-content: right;
+	align-items: center;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+button, input {
+	font-family: 'Roboto', sans-serif;
 }
 
 menu {
 	display: flex;
 	flex-direction: column;
+	row-gap: 1em;
+}
+
+canvas {
+	margin: auto;
 }
