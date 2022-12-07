@@ -1,6 +1,8 @@
 import { grayscale } from "./grayscale.js";
 import { handleFiles, reset } from "./handleFiles.js";
 import { thresholding } from "./thresholding.js";
+import { dilatation } from "./dilatation.js";
+// import { erosion } from "./erosion.js";
 
 const input = document.getElementById('input');
 input.addEventListener('change', handleFiles);
@@ -14,4 +16,11 @@ sliderThresholding.addEventListener('input', function() {
 });
 
 const buttonThresholding = document.getElementById('thresholding');
-buttonThresholding.addEventListener('click', thresholding);buttonReset.addEventListener('click', reset);
+buttonThresholding.addEventListener('click', thresholding);
+
+const buttonDilatation = document.getElementById('dilatation');
+buttonDilatation.addEventListener('click', dilatation(3));
+
+// const buttonErosion = document.getElementById('erosion');
+// buttonErosion.addEventListener('click', erosion);
+
