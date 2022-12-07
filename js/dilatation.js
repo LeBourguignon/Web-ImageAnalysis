@@ -1,4 +1,5 @@
-export function dilatation(radius) {
+export function dilatation() {
+	const radius = 3; 
 	const ctx = document.getElementById('canvas').getContext('2d');
     const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 	const out = new ImageData(imgData.width, imgData.height);

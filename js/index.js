@@ -19,7 +19,7 @@ const buttonThresholding = document.getElementById('thresholding');
 buttonThresholding.addEventListener('click', thresholding);
 
 const buttonDilatation = document.getElementById('dilatation');
-buttonDilatation.addEventListener('click', dilatation(3));
+buttonDilatation.addEventListener('click', dilatation);
 
 // const buttonErosion = document.getElementById('erosion');
 // buttonErosion.addEventListener('click', erosion);
