@@ -1,11 +1,12 @@
-export function thresholding(threshold) {
+export function thresholding() {
+	const slider = document.getElementById("rangeThresholding");
     const ctx = document.getElementById('canvas').getContext('2d');
     const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < imgData.data.length; i += 4) {
         let count = imgData.data[i] + imgData.data[i + 1] + imgData.data[i + 2];
 
         let colour = 0;
-        if (count / 3 > 128) {
+        if (count / 3 > slider.value) {
             colour = 255;
         }
 

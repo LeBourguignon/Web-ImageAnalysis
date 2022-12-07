@@ -8,5 +8,10 @@ input.addEventListener('change', handleFiles);
 const buttonGrayscale = document.getElementById('grayscale');
 buttonGrayscale.addEventListener('click', grayscale);
 
+var sliderThresholding = document.getElementById("rangeThresholding");
+sliderThresholding.addEventListener('input', function() {
+	document.getElementById("valueThreshold").innerHTML = sliderThresholding.value;
+});
+
 const buttonThresholding = document.getElementById('thresholding');
 buttonThresholding.addEventListener('click', thresholding);
