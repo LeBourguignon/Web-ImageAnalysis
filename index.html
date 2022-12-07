@@ -8,11 +8,13 @@
     <title>Image</title>
 </head>
 <body>
-    <input type="file" id="input"/>
+    <menu>
+        <input type="file" id="input"/>
+        <button id="grayscale">Niveaux de gris</button>
+        <button id="thresholding">Seuillage</button>
+    </menu>
+    
     <canvas width="400" height="300" id="canvas"></canvas>
-
-    <button id="grayscale">Niveaux de gris</button>
-    <button id="thresholding">Seuillage</button>
 
     <script type="module" src="js/index.js"></script>
 </body>
