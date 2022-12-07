@@ -24,3 +24,5 @@ buttonDilatation.addEventListener('click', dilatation(3));
 // const buttonErosion = document.getElementById('erosion');
 // buttonErosion.addEventListener('click', erosion);
 
+const buttonReset = document.getElementById('reset');
+buttonReset.addEventListener('click', reset);
