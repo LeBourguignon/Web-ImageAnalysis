@@ -3,6 +3,7 @@ export function dilatation() {
 	const ctx = document.getElementById('canvas').getContext('2d');
     const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
 	const out = new ImageData(imgData.width, imgData.height);
+	
 	for (let i = 0; i < imgData.data.length; i += 4) {
 		out.data[i] = 0;
 		out.data[i + 1] = 0;
@@ -16,6 +17,7 @@ export function dilatation() {
 						out.data[i] = 255;
 						out.data[i + 1] = 255;
 						out.data[i + 2] = 255;
+						
 						j = radius;
 						k = radius;
 					}
