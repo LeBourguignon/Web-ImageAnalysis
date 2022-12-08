@@ -1,5 +1,5 @@
 export function erosion() {
-	const radius = 3; 
+	const radius = document.getElementById("rangeErosion").value; 
 	const ctx = document.getElementById('canvas').getContext('2d');
     const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
 	const out = new ImageData(imgData.width, imgData.height);

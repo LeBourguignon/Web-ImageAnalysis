@@ -18,8 +18,18 @@ sliderThresholding.addEventListener('input', function() {
 const buttonThresholding = document.getElementById('thresholding');
 buttonThresholding.addEventListener('click', thresholding);
 
+const sliderDilatation = document.getElementById("rangeDilatation");
+sliderDilatation.addEventListener('input', function() {
+	document.getElementById("valueDilatation").innerHTML = sliderDilatation.value;
+});
+
 const buttonDilatation = document.getElementById('dilatation');
 buttonDilatation.addEventListener('click', dilatation);
+
+const sliderErosion = document.getElementById("rangeErosion");
+sliderErosion.addEventListener('input', function() {
+	document.getElementById("valueErosion").innerHTML = sliderErosion.value;
+});
 
 const buttonErosion = document.getElementById('erosion');
 buttonErosion.addEventListener('click', erosion);
