@@ -13,16 +13,22 @@
     <menu>
 		<h1>Options</h1>
         <input autocomplete="off" type="file" id="input"/>
+
         <button id="grayscale">Niveaux de gris</button>
-        <button id="thresholding">Seuillage</button>
-		<input type="range" autocomplete="off" min="0" max="255" value="128" class="slider" id="rangeThresholding">
-		<p>Valeur du seuil : <span id="valueThreshold">128</span></p>
-		<button id="dilatation">Dilatation</button>
-        <input type="range" autocomplete="off" min="0" max="10" value="3" class="slider" id="rangeDilatation">
-		<p>Rayon du disque unité : <span id="valueDilatation">3</span></p>
-		<button id="erosion">Erosion</button>
-        <input type="range" autocomplete="off" min="0" max="10" value="3" class="slider" id="rangeErosion">
-		<p>Rayon du disque unité : <span id="valueErosion">3</span></p>
+
+        <div>
+            <p>Valeur du seuil : <span id="valueThreshold">128</span></p>
+            <input type="range" autocomplete="off" min="0" max="255" value="128" class="slider" id="rangeThresholding">
+            <button id="thresholding">Seuillage</button>
+        </div>
+        		
+		<div>
+            <p>Rayon du disque unité : <span id="valueRadius">3</span></p>
+            <input type="range" autocomplete="off" min="0" max="10" value="3" class="slider" id="rangeRadius">
+            <button id="dilatation">Dilatation</button>
+            <button id="erosion">Erosion</button>
+        </div>
+        
 		<button id="reset">Réinitialiser</button>
 
 		<footer>
