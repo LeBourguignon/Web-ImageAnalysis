@@ -5,6 +5,8 @@ export function erosion() {
 	const out = new ImageData(imgData.width, imgData.height);
 	
     for (let i = 0; i < imgData.data.length; i += 4) {
+        console.log((i)/imgData.data.length);
+
 		out.data[i] = 0;
 		out.data[i + 1] = 0;
 		out.data[i + 2] = 0;
@@ -35,7 +37,6 @@ export function erosion() {
             out.data[i + 1] = 255;
             out.data[i + 2] = 255;
         }
-		console.log({process: (i+4)/imgData.data.length})
     }
 	ctx.putImageData(out, 0, 0);
 	console.log("Erosion done");

@@ -3,6 +3,8 @@ import { handleFiles, reset } from "./handleFiles.js";
 import { thresholding } from "./thresholding.js";
 import { dilatation } from "./dilatation.js";
 import { erosion } from "./erosion.js";
+import { closing } from "./closing.js";
+import { opening } from "./opening.js";
 
 const input = document.getElementById('input');
 input.addEventListener('change', handleFiles);
@@ -28,6 +30,12 @@ buttonDilatation.addEventListener('click', dilatation);
 
 const buttonErosion = document.getElementById('erosion');
 buttonErosion.addEventListener('click', erosion);
+
+const buttonClosing = document.getElementById('closing');
+buttonClosing.addEventListener('click', closing);
+
+const buttonOpening = document.getElementById('opening');
+buttonOpening.addEventListener('click', opening);
 
 const buttonReset = document.getElementById('reset');
 buttonReset.addEventListener('click', reset);
