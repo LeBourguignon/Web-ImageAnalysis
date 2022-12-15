@@ -5,6 +5,8 @@ import { dilatation } from "./dilatation.js";
 import { erosion } from "./erosion.js";
 import { closing } from "./closing.js";
 import { opening } from "./opening.js";
+import { thinning } from "./thinning.js";
+import { thikening } from "./thikening.js";
 
 const input = document.getElementById('input');
 input.addEventListener('change', handleFiles);
