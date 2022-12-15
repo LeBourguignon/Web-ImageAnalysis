@@ -1,10 +1,10 @@
 import { grayscale } from "./grayscale.js";
 import { handleFiles, reset } from "./handleFiles.js";
 import { thresholding } from "./thresholding.js";
-import { dilatation } from "./dilatation.js";
-import { erosion } from "./erosion.js";
-import { closing } from "./closing.js";
-import { opening } from "./opening.js";
+import { showDilatation } from "./dilatation.js";
+import { showErosion } from "./erosion.js";
+import { showClosing } from "./closing.js";
+import { showOpening } from "./opening.js";
 import { thinning } from "./thinning.js";
 import { thikening } from "./thikening.js";
 
@@ -28,16 +28,16 @@ sliderRadius.addEventListener('input', function() {
 });
 
 const buttonDilatation = document.getElementById('dilatation');
-buttonDilatation.addEventListener('click', dilatation);
+buttonDilatation.addEventListener('click', showDilatation);
 
 const buttonErosion = document.getElementById('erosion');
-buttonErosion.addEventListener('click', erosion);
+buttonErosion.addEventListener('click', showErosion);
 
 const buttonClosing = document.getElementById('closing');
-buttonClosing.addEventListener('click', closing);
+buttonClosing.addEventListener('click', showClosing);
 
 const buttonOpening = document.getElementById('opening');
-buttonOpening.addEventListener('click', opening);
+buttonOpening.addEventListener('click', showOpening);
 
 const buttonReset = document.getElementById('reset');
 buttonReset.addEventListener('click', reset);

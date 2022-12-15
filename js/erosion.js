@@ -1,11 +1,8 @@
-export function erosion() {
-	const radius = document.getElementById("rangeRadius").value; 
-	const ctx = document.getElementById('canvas').getContext('2d');
-    const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+export function erosion(imgData, radius, log = false) {
 	const out = new ImageData(imgData.width, imgData.height);
 	
     for (let i = 0; i < imgData.data.length; i += 4) {
-        console.log((i)/imgData.data.length);
+        if(log) console.log((i)/imgData.data.length);
 
 		out.data[i] = 0;
 		out.data[i + 1] = 0;
@@ -38,6 +35,14 @@ export function erosion() {
             out.data[i + 2] = 255;
         }
     }
-	ctx.putImageData(out, 0, 0);
-	console.log("Erosion done");
+	if(log) console.log("Erosion done");
+    return out;
+}
+
+export function showErosion() {
+    const radius = document.getElementById("rangeRadius").value; 
+	const ctx = document.getElementById('canvas').getContext('2d');
+    const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+	const out = erosion(imgData, radius, true);
+    ctx.putImageData(out, 0, 0);
 }

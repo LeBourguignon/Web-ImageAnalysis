@@ -1,11 +1,8 @@
-export function dilatation() {
-	const radius = document.getElementById("rangeRadius").value; 
-	const ctx = document.getElementById('canvas').getContext('2d');
-    const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+export function dilatation(imgData, radius, log = false) {
 	const out = new ImageData(imgData.width, imgData.height);
 	
 	for (let i = 0; i < imgData.data.length; i += 4) {
-		console.log((i)/imgData.data.length);
+		if(log) console.log((i)/imgData.data.length);
 
 		out.data[i] = 0;
 		out.data[i + 1] = 0;
@@ -27,6 +24,14 @@ export function dilatation() {
 			}
 		}
     }
-	ctx.putImageData(out, 0, 0);
-	console.log("Dilatation done");
+	if(log) console.log("Dilatation done");
+	return out;
+}
+
+export function showDilatation() {
+	const radius = document.getElementById("rangeRadius").value; 
+	const ctx = document.getElementById('canvas').getContext('2d');
+    const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+	const out = dilatation(imgData, radius, true);
+    ctx.putImageData(out, 0, 0);
 }
