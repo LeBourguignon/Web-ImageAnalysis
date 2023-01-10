@@ -1,9 +1,9 @@
 import { dilatation } from "./dilatation.js";
 import { erosion } from "./erosion.js";
 
-export function closing(imgData, radius, log) {
-    let out = dilatation(imgData, radius, log);
-    out = erosion(imgData, radius, log);
+export function closing(img, radius, log) {
+    let out = dilatation(img, radius, log);
+    out = erosion(img, radius, log);
     console.log("Closing done");
     return out;
 }
@@ -11,7 +11,7 @@ export function closing(imgData, radius, log) {
 export function showClosing() {
     const radius = document.getElementById("rangeRadius").value; 
 	const ctx = document.getElementById('canvas').getContext('2d');
-    const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-	const out = closing(imgData, radius, true);
+    const img = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+	const out = closing(img, radius, true);
     ctx.putImageData(out, 0, 0);
 }

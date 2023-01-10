@@ -1,20 +1,20 @@
-export function erosion(imgData, radius, log = false) {
-	const out = new ImageData(imgData.width, imgData.height);
+export function erosion(img, radius, log = false) {
+	const out = new ImageData(img.width, img.height);
 	
-    for (let i = 0; i < imgData.data.length; i += 4) {
-        if(log) console.log((i)/imgData.data.length);
+    for (let i = 0; i < img.data.length; i += 4) {
+        if(log) console.log((i)/img.data.length);
 
 		out.data[i] = 0;
 		out.data[i + 1] = 0;
 		out.data[i + 2] = 0;
-		out.data[i + 3] = imgData.data[i + 3];
+		out.data[i + 3] = img.data[i + 3];
 
         let count = 0;
 
 		for (let j = -radius; j <= radius; j++) {
 			for (let k = -radius; k <= radius; k++) {
-				if ((i % (imgData.width * 4)) + k * 4 >= 0 && (i % (imgData.width * 4)) + k * 4 < imgData.width * 4) {
-					if (imgData.data[i + j * (imgData.width * 4) + k * 4] > 0) {
+				if ((i % (img.width * 4)) + k * 4 >= 0 && (i % (img.width * 4)) + k * 4 < img.width * 4) {
+					if (img.data[i + j * (img.width * 4) + k * 4] > 0) {
                         count++;
                     }
                     else {
@@ -42,7 +42,7 @@ export function erosion(imgData, radius, log = false) {
 export function showErosion() {
     const radius = document.getElementById("rangeRadius").value; 
 	const ctx = document.getElementById('canvas').getContext('2d');
-    const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-	const out = erosion(imgData, radius, true);
+    const img = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+	const out = erosion(img, radius, true);
     ctx.putImageData(out, 0, 0);
 }
