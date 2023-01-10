@@ -5,8 +5,8 @@ import { showDilatation } from "./dilatation.js";
 import { showErosion } from "./erosion.js";
 import { showClosing } from "./closing.js";
 import { showOpening } from "./opening.js";
-import { thinning } from "./thinning.js";
-import { thikening } from "./thikening.js";
+import { showThinning } from "./thinning.js";
+import { showThickening } from "./thickening.js";
 
 const input = document.getElementById('input');
 input.addEventListener('change', handleFiles);
@@ -38,6 +38,12 @@ buttonClosing.addEventListener('click', showClosing);
 
 const buttonOpening = document.getElementById('opening');
 buttonOpening.addEventListener('click', showOpening);
+
+const buttonThinning = document.getElementById('thinning');
+buttonThinning.addEventListener('click', showThinning);
+
+const buttonThickening = document.getElementById('thickening');
+buttonThickening.addEventListener('click', showThickening);
 
 const buttonReset = document.getElementById('reset');
 buttonReset.addEventListener('click', reset);
