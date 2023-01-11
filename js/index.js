@@ -7,6 +7,9 @@ import { showClosing } from "./closing.js";
 import { showOpening } from "./opening.js";
 import { showThinning } from "./thinning.js";
 import { showThickening } from "./thickening.js";
+import { showHomotopicSkeletonization } from "./homotopicSkeletonization.js";
+import { showLantuejoulSkeletonization } from "./lantuejoulSkeletonization.js";
+
 
 const input = document.getElementById('input');
 input.addEventListener('change', handleFiles);
@@ -44,6 +47,12 @@ buttonThinning.addEventListener('click', showThinning);
 
 const buttonThickening = document.getElementById('thickening');
 buttonThickening.addEventListener('click', showThickening);
+
+const buttonHomotopicSkeletonization = document.getElementById('homotopicSkeletonization');
+buttonHomotopicSkeletonization.addEventListener('click', showHomotopicSkeletonization);
+
+const buttonLantuejoulSkeletonization = document.getElementById('lantuejoulSkeletonization');
+buttonLantuejoulSkeletonization.addEventListener('click', showLantuejoulSkeletonization);
 
 const buttonReset = document.getElementById('reset');
 buttonReset.addEventListener('click', reset);

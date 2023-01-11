@@ -1,5 +1,4 @@
 import { addition } from "./addition.js";
-import { subtraction } from "./subtraction.js";
 
 export const constL = [
     [255,   255,    255],
@@ -69,8 +68,6 @@ export function thickening(img) {
 }
 
 export function showThickening() {
-    console.log("showThickening");
-    const radius = document.getElementById("rangeRadius").value; 
 	const ctx = document.getElementById('canvas').getContext('2d');
     const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
 	const out = thickening(imgData);
