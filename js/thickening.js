@@ -28,6 +28,9 @@ export function thickeningRot(img, structuringElement) {
                         out.data[i] = 0;
                         out.data[i + 1] = 0;
                         out.data[i + 2] = 0;
+
+                        j = 2;
+                        k = 2;
                     }
                 }
                 else {
@@ -35,6 +38,9 @@ export function thickeningRot(img, structuringElement) {
                         out.data[i] = 0;
                         out.data[i + 1] = 0;
                         out.data[i + 2] = 0;
+
+                        j = 2;
+                        k = 2;
                     }
                 }
             }

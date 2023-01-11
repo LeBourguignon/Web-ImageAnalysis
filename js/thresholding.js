@@ -13,7 +13,7 @@ export function thresholding() {
         img.data[i] = colour;       // r
         img.data[i + 1] = colour;   // g
         img.data[i + 2] = colour;   // b
-        img.data[i + 3] = 255;    // a
+        img.data[i + 3] = 255;      // a
     }
     ctx.putImageData(img, 0, 0);
 }

@@ -10,25 +10,33 @@ import { showThickening } from "./thickening.js";
 import { showHomotopicSkeletonization } from "./homotopicSkeletonization.js";
 import { showLantuejoulSkeletonization } from "./lantuejoulSkeletonization.js";
 
-
-const input = document.getElementById('input');
-input.addEventListener('change', handleFiles);
-
-const buttonGrayscale = document.getElementById('grayscale');
-buttonGrayscale.addEventListener('click', grayscale);
+// Sliders
 
 const sliderThresholding = document.getElementById("rangeThresholding");
 sliderThresholding.addEventListener('input', function() {
 	document.getElementById("valueThreshold").innerHTML = sliderThresholding.value;
 });
 
-const buttonThresholding = document.getElementById('thresholding');
-buttonThresholding.addEventListener('click', thresholding);
-
 const sliderRadius = document.getElementById("rangeRadius");
 sliderRadius.addEventListener('input', function() {
 	document.getElementById("valueRadius").innerHTML = sliderRadius.value;
 });
+
+// Entrée
+
+const input = document.getElementById('input');
+input.addEventListener('change', handleFiles);
+
+// Boutons
+
+const buttonReset = document.getElementById('reset');
+buttonReset.addEventListener('click', reset);
+
+const buttonGrayscale = document.getElementById('grayscale');
+buttonGrayscale.addEventListener('click', grayscale);
+
+const buttonThresholding = document.getElementById('thresholding');
+buttonThresholding.addEventListener('click', thresholding);
 
 const buttonDilatation = document.getElementById('dilatation');
 buttonDilatation.addEventListener('click', showDilatation);
@@ -53,6 +61,3 @@ buttonHomotopicSkeletonization.addEventListener('click', showHomotopicSkeletoniz
 
 const buttonLantuejoulSkeletonization = document.getElementById('lantuejoulSkeletonization');
 buttonLantuejoulSkeletonization.addEventListener('click', showLantuejoulSkeletonization);
-
-const buttonReset = document.getElementById('reset');
-buttonReset.addEventListener('click', reset);

@@ -3,7 +3,7 @@ import { subtraction } from "./subtraction.js";
 
 export const constL = [
     [255,   255,    255],
-    [null,  255,      null],
+    [null,  255,    null],
     [0,     0,      0]
 ];
 
@@ -29,6 +29,9 @@ export function thinningRot(img, structuringElement) {
                         out.data[i] = 0;
                         out.data[i + 1] = 0;
                         out.data[i + 2] = 0;
+
+                        j = 2;
+                        k = 2;
                     }
                 }
                 else {
@@ -36,6 +39,9 @@ export function thinningRot(img, structuringElement) {
                         out.data[i] = 0;
                         out.data[i + 1] = 0;
                         out.data[i + 2] = 0;
+
+                        j = 2;
+                        k = 2;
                     }
                 }
             }
