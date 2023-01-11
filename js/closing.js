@@ -1,7 +1,7 @@
 import { dilatation } from "./dilatation.js";
 import { erosion } from "./erosion.js";
 
-export function closing(img, radius, log) {
+export function closing(img, radius, log = false) {
     let out = dilatation(img, radius, log);
     out = erosion(img, radius, log);
     console.log("Closing done");

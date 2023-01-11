@@ -1,7 +1,7 @@
 import { dilatation } from "./dilatation.js";
 import { erosion } from "./erosion.js";
 
-export function opening(img, radius, log) {
+export function opening(img, radius, log = false) {
     let out = erosion(img, radius, log);
     out = dilatation(out, radius, log);
     if(log) console.log("Opening done");
