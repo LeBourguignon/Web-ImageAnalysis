@@ -3,7 +3,7 @@ import { erosion } from "./erosion.js";
 
 export function closing(img, radius, log = false) {
     let out = dilatation(img, radius, log);
-    out = erosion(img, radius, log);
+    out = erosion(out, radius, log);
     if(log) console.log("Closing done");
     return out;
 }

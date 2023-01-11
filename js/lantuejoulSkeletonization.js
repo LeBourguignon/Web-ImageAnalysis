@@ -1,9 +1,12 @@
 import { addition } from "./addition.js";
+import { closing } from "./closing.js";
 import { erosion } from "./erosion.js";
 import { opening } from "./opening.js";
 import { subtraction } from "./subtraction.js";
 
 export function lantuejoulSkeletonization(img) {
+    const ctx = document.getElementById('canvas').getContext('2d');
+
     let out = new ImageData(img.width, img.height);
 
     for (let i = 0; i < img.data.length; i += 4) {
@@ -24,10 +27,12 @@ export function lantuejoulSkeletonization(img) {
         let opened = opening(eroded, 1);
         let sub = subtraction(eroded, opened);
         out = addition(out, sub)
-        
+
         n++;
     }
 
+    out = closing(out, n/3);
+    
     return out
 }
 
