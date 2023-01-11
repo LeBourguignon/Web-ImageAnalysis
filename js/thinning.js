@@ -30,14 +30,6 @@ export function thinningRot(img, structuringElement) {
                         out.data[i + 1] = 0;
                         out.data[i + 2] = 0;
                     }
-                    // console.log(
-                    //     {x: (i / 4) % (img.width), y: (i / 4) / (img.width), valueIn: img.data[i], valueOut: out.data[i]}, 
-                    //     "Dans l'image", 
-                    //     {x: (i / 4) % (img.width) + k, y: (i / 4) / (img.width) + j, value: img.data[i + j * (img.width * 4) + k * 4]},
-                    //     structuringElement[j+1][k+1],
-                    //     structuringElement[j+1][k+1] == img.data[i + j * (img.width * 4) + k * 4],
-                    //     structuringElement[j+1][k+1] == null
-                    //     );
                 }
                 else {
                     if (!(structuringElement[j+1][k+1] == 0 || structuringElement[j+1][k+1] == null)) {
@@ -45,14 +37,6 @@ export function thinningRot(img, structuringElement) {
                         out.data[i + 1] = 0;
                         out.data[i + 2] = 0;
                     }
-                    // console.log(
-                    //     {x: (i / 4) % (img.width), y: (i / 4) / (img.width), valueIn: img.data[i], valueOut: out.data[i]}, 
-                    //     "Hors image", 
-                    //     {x: (i / 4) % (img.width) + k, y: (i / 4) / (img.width) + j, value: img.data[i + j * (img.width * 4) + k * 4]}, 
-                    //     structuringElement[j+1][k+1],
-                    //     structuringElement[j+1][k+1] == img.data[i + j * (img.width * 4) + k * 4],
-                    //     structuringElement[j+1][k+1] == null
-                    //     );
                 }
             }
         }
