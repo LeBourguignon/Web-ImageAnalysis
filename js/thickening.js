@@ -1,5 +1,11 @@
 import { addition } from "./addition.js";
 
+/*
+* Définition des matrices structurantes de l'épaississement
+* On utilise ici deux matrices différentes car nous n'avons pas réussi à faire des rotations de 45 degrés
+* Il y a une matrice avec une rotation de 0 degré et une autre à 45 degré sur lesquelles on appliquera des rotations de 90 degrés
+*/
+
 export const constL = [
     [255,   255,    255],
     [null,  0,      null],
@@ -11,6 +17,10 @@ export const constM = [
     [255,   0,      0],
     [null,  0,      0]
 ];
+
+/*
+* Cette fonction épaissit une image en appliquant la matrice structurante passée en paramètre.
+*/
 
 export function thickeningRot(img, structuringElement) {
     let out = new ImageData(img.width, img.height);
@@ -49,6 +59,10 @@ export function thickeningRot(img, structuringElement) {
     return out;
 }
 
+/*
+* Cette fonction épaissit une image en appliquant les 8 rotations de la matrice structurante.
+*/
+
 export function thickening(img) {
     let localL = constL;
     let localM = constM;
@@ -72,6 +86,10 @@ export function thickening(img) {
 
     return out;
 }
+
+/*
+* Cette fonction affiche l'image épaissie
+*/
 
 export function showThickening() {
 	const ctx = document.getElementById('canvas').getContext('2d');
