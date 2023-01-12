@@ -69,19 +69,19 @@ export function thinning(img) {
     let localM = constM;
 
     let out = thinningRot(img, localL);
-    out = addition(out, thinningRot(img, localM));
+    out = addition(out, thinningRot(subtraction(img, out), localM));
     localL = localL[0].map((value, index) => localL.map(row => row[row.length-1-index]));
     localM = localM[0].map((value, index) => localM.map(row => row[row.length-1-index]));
-    out = addition(out, thinningRot(img, localL));
-    out = addition(out, thinningRot(img, localM));
+    out = addition(out, thinningRot(subtraction(img, out), localL));
+    out = addition(out, thinningRot(subtraction(img, out), localM));
     localL = localL[0].map((value, index) => localL.map(row => row[row.length-1-index]));
     localM = localM[0].map((value, index) => localM.map(row => row[row.length-1-index]));
-    out = addition(out, thinningRot(img, localL));
-    out = addition(out, thinningRot(img, localM));
+    out = addition(out, thinningRot(subtraction(img, out), localL));
+    out = addition(out, thinningRot(subtraction(img, out), localM));
     localL = localL[0].map((value, index) => localL.map(row => row[row.length-1-index]));
     localM = localM[0].map((value, index) => localM.map(row => row[row.length-1-index]));
-    out = addition(out, thinningRot(img, localL));
-    out = addition(out, thinningRot(img, localM));
+    out = addition(out, thinningRot(subtraction(img, out), localL));
+    out = addition(out, thinningRot(subtraction(img, out), localM));
 
     out = subtraction(img, out);
 

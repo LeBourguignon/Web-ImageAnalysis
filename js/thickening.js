@@ -1,4 +1,6 @@
 import { addition } from "./addition.js";
+import { subtraction } from "./subtraction.js";
+
 
 /*
 * Définition des matrices structurantes de l'épaississement
@@ -68,19 +70,19 @@ export function thickening(img) {
     let localM = constM;
 
     let out = thickeningRot(img, localL);
-    out = addition(out, thickeningRot(img, localM));
+    out = addition(out, thickeningRot(subtraction(img, out), localM));
     localL = localL[0].map((value, index) => localL.map(row => row[row.length-1-index]));
     localM = localM[0].map((value, index) => localM.map(row => row[row.length-1-index]));
-    out = addition(out, thickeningRot(img, localL));
-    out = addition(out, thickeningRot(img, localM));
+    out = addition(out, thickeningRot(subtraction(img, out), localL));
+    out = addition(out, thickeningRot(subtraction(img, out), localM));
     localL = localL[0].map((value, index) => localL.map(row => row[row.length-1-index]));
     localM = localM[0].map((value, index) => localM.map(row => row[row.length-1-index]));
-    out = addition(out, thickeningRot(img, localL));
-    out = addition(out, thickeningRot(img, localM));
+    out = addition(out, thickeningRot(subtraction(img, out), localL));
+    out = addition(out, thickeningRot(subtraction(img, out), localM));
     localL = localL[0].map((value, index) => localL.map(row => row[row.length-1-index]));
     localM = localM[0].map((value, index) => localM.map(row => row[row.length-1-index]));
-    out = addition(out, thickeningRot(img, localL));
-    out = addition(out, thickeningRot(img, localM));
+    out = addition(out, thickeningRot(subtraction(img, out), localL));
+    out = addition(out, thickeningRot(subtraction(img, out), localM));
 
     out = addition(img, out);
 

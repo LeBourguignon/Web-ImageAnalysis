@@ -1,5 +1,4 @@
 import { addition } from "./addition.js";
-import { closing } from "./closing.js";
 import { erosion } from "./erosion.js";
 import { opening } from "./opening.js";
 import { subtraction } from "./subtraction.js";
@@ -34,8 +33,6 @@ export function lantuejoulSkeletonization(img) {
 
         n++;
     }
-
-    out = closing(out, n/3);
     
     return out
 }
